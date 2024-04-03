@@ -1,4 +1,6 @@
-public class Beneficios {
+package beneficios;
+
+public class Beneficio_noturno {
     
     
 }
