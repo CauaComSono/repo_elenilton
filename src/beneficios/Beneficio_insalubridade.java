@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Beneficio_insalubridade {
 
     String grauInsalubridade;
-    Double taxaInsalubridade;
-    Double salarioComTaxaInsalubridade;
+    public Double taxaInsalubridade;
+
 
     public void BeneficioInsalubridade(boolean TemInsalubridade){
 
@@ -19,19 +19,19 @@ public class Beneficio_insalubridade {
                 if(grauInsalubridade == "minimo" || grauInsalubridade == "mínimo"){
 
                    taxaInsalubridade = salario * 0.1;
-                   salarioComTaxaInsalubridade = salario + taxaInsalubridade;
+
 
                 }
                 else if(grauInsalubridade == "medio" || grauInsalubridade == "médio"){
 
                     taxaInsalubridade = salario * 0.2;
-                    salarioComTaxaInsalubridade = salario + taxaInsalubridade;
+
 
                 }
                 else if(grauInsalubridade == "maximo" || grauInsalubridade == "máximo"){
 
                     taxaInsalubridade = salario * 0.4;
-                    salarioComTaxaInsalubridade = salario + taxaInsalubridade;
+
 
                 }          
         }
