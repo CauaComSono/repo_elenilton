@@ -8,7 +8,7 @@ public class Beneficio_insalubridade {
     public Double taxaInsalubridade;
 
 
-    public Double BeneficioInsalubridade(boolean TemInsalubridade){
+    public Double BeneficioInsalubridade(boolean TemInsalubridade, double salario){
 
         Scanner scan = new Scanner(System.in);
 

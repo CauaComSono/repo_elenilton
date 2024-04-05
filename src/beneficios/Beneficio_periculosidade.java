@@ -6,7 +6,7 @@ public class Beneficio_periculosidade {
     public Double taxaPericulosidade;
 
 
-    public Double BeneficioPerciulosidade (boolean TemPericulosidade){
+    public Double BeneficioPerciulosidade (boolean TemPericulosidade, double salario){
         System.out.println("Você recebe beneficio de periculosidade?");
 
         if(TemPericulosidade){
