@@ -1,3 +1,5 @@
+package App;
+
 public class Endereco {
     String rua;
     String bairro;
