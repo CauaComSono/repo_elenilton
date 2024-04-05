@@ -8,7 +8,7 @@ public class Beneficio_insalubridade {
     public Double taxaInsalubridade;
 
 
-    public void BeneficioInsalubridade(boolean TemInsalubridade){
+    public Double BeneficioInsalubridade(boolean TemInsalubridade){
 
         Scanner scan = new Scanner(System.in);
 
@@ -31,14 +31,15 @@ public class Beneficio_insalubridade {
                 else if(grauInsalubridade == "maximo" || grauInsalubridade == "máximo"){
 
                     taxaInsalubridade = salario * 0.4;
-
-
+                    
+                    
                 }          
-        }
-        else{
-            System.out.println("Não tem taxa de insalubridade.");
+            }
+            else{
+                System.out.println("Não tem taxa de insalubridade.");
+            }
+            
+            return taxaInsalubridade;
+             
         }
     }
-
-    
-}

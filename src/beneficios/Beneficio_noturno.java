@@ -5,7 +5,7 @@ public class Beneficio_noturno {
    public Double taxaNoturna;
 
 
-    public void BeneficioNoturno (boolean TemBeneficioNoturno) {
+    public Double BeneficioNoturno (boolean TemBeneficioNoturno) {
         System.out.println("Você recebe Beneficio de trabalho Noturno?");
         if (TemBeneficioNoturno) {
             
@@ -14,6 +14,9 @@ public class Beneficio_noturno {
         else {
             System.out.println("Não recebe beneficio de trabalho noturno.");
         }
+
+        return taxaNoturna;
+        
     }
     
 }

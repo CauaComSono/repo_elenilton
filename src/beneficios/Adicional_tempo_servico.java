@@ -6,7 +6,7 @@ public class Adicional_tempo_servico {
 
         public double valorAdicional;
 
-    public void AdcionalTempo (boolean TemAdicional){
+    public double AdcionalTempo (boolean TemAdicional){
         
         Scanner scan = new Scanner(System.in);
 
@@ -19,6 +19,9 @@ public class Adicional_tempo_servico {
         else {
             System.out.println("Não tem adicional.");
         }
+
+        return valorAdicional;
+        
     }
     
 }
