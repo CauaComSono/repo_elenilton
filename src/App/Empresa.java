@@ -1,3 +1,13 @@
+<<<<<<< HEAD:src/Empresa.java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+=======
+package App;
+
+public class Empresa {
+>>>>>>> 3fa98460cdf477984b889b088c62aa22d81728db:src/App/Empresa.java
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
