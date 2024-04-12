@@ -5,7 +5,7 @@ O repouso semanal deve ser de 24 horas, sem possibilidade de divisão desse temp
 */
 package beneficios;
 public class Descanso_remunerado {
-    private String nome;
+
     private double salario;
     private boolean cumpriuJornada;
 
