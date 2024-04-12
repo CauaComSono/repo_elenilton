@@ -1,3 +1,5 @@
+package App;
+
 public class Empresa {
 
     int CNPJ;
