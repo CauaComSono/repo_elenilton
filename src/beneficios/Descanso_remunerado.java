@@ -6,13 +6,10 @@ O repouso semanal deve ser de 24 horas, sem possibilidade de divisão desse temp
 package beneficios;
 public class Descanso_remunerado {
 
-    private double salario;
-    private boolean cumpriuJornada;
-
     // Construtor e outros métodos da classe
 
     // Método para calcular o valor do repouso semanal remunerado
-    public double calcularRepousoSemanal() {
+    public double calcularRepousoSemanal( boolean cumpriuJornada,double salario) {
         // Suponhamos que o repouso seja de 24 horas consecutivas
         // e o salário seja mensal
         if (cumpriuJornada) {

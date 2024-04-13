@@ -4,7 +4,8 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class Vale_Alimentacao {
-    public static void main(String[] args) {
+   
+   public double calcularValeAlimentacao() {
         
         Scanner scanner = new Scanner(System.in);
         DecimalFormat formatador = new DecimalFormat("0.00");
@@ -17,8 +18,10 @@ public class Vale_Alimentacao {
 
         double valorTotalVA = valorDiarioVA * diasTrabalhados;
 
-        System.out.println("O valor total do vale-alimentação é: R$" + formatador.format(valorTotalVA));
+        formatador.format(valorTotalVA);
+        System.out.println("O valor total do vale-alimentação é: R$" + valorTotalVA);
 
         scanner.close();
+        return valorTotalVA;
     }
 }

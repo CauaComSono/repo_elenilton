@@ -1,10 +1,8 @@
-<<<<<<< HEAD:src/Funcionario.java
+package App;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-=======
-package App;
->>>>>>> 3fa98460cdf477984b889b088c62aa22d81728db:src/App/Funcionario.java
 
 public class Funcionario {
     private String nomeCompleto;
@@ -15,9 +13,11 @@ public class Funcionario {
     private int diasTrabalhados;
     private double salarioBruto;
     private double contribuicaoSindical;
+    private boolean adiantamento;
+    private String sexo;
 
     public Funcionario(String nomeCompleto, String cpf, String cargo, String funcao, String registro,
-                       int diasTrabalhados, double salarioBruto, double contribuicaoSindical) {
+                       int diasTrabalhados, double salarioBruto, double contribuicaoSindical, boolean adiantamento, String sexo) {
         this.nomeCompleto = nomeCompleto;
         this.cpf = cpf;
         this.cargo = cargo;
@@ -26,6 +26,8 @@ public class Funcionario {
         this.diasTrabalhados = diasTrabalhados;
         this.salarioBruto = salarioBruto;
         this.contribuicaoSindical = contribuicaoSindical;
+        this.adiantamento = adiantamento;
+        this.sexo = sexo;
     }
 
     public String getNomeCompleto() {
@@ -60,6 +62,15 @@ public class Funcionario {
         return contribuicaoSindical;
     }
 
+    public boolean getAdiantamento() {
+        return adiantamento;
+    }
+    public String getSexo() {
+        return sexo;
+    }
+
+
+
     public static List<Funcionario> dadosFuncionario() {
         List<Funcionario> listaFuncionarios = new ArrayList<>();
         Scanner leitura = new Scanner(System.in);
@@ -75,17 +86,17 @@ public class Funcionario {
         switch (resposta) {
             case 1:
                 listaFuncionarios.add(new Funcionario("Maria Santos", "987.654.321-00", "Ninja de Programação",
-                        "Desenvolver soluções invisíveis", "2022002", 20, 3000.0, 100.0));
+                        "Desenvolver soluções invisíveis", "2022002", 20, 3000.0, 100.0, true, "f"));
                 break;
 
             case 2:
                 listaFuncionarios.add(new Funcionario("João da Silva", "123.456.789-00", "Gerente de Felicidade",
-                        "Fazer as pessoas sorrirem", "2022001", 22, 3500.0, 120.0));
+                        "Fazer as pessoas sorrirem", "2022001", 22, 3500.0, 120.0,false, "m"));
                 break;
 
             case 3:
                 listaFuncionarios.add(new Funcionario("Carlos Roberto", "456.789.123-00", "Mestre Churrasqueiro",
-                        "Transformar carne em poesia", "2022003", 18, 2800.0, 90.0));
+                        "Transformar carne em poesia", "2022003", 18, 2800.0, 90.0, false, "m"));
                 break;
 
             case 4:
@@ -106,8 +117,12 @@ public class Funcionario {
                 double salarioBruto = leitura.nextDouble();
                 System.out.print("Contribuição sindical: R$ ");
                 double contribuicaoSindical = leitura.nextDouble();
+                System.out.print("Recebe adiantamento: true/false ");
+                boolean adiantamento = leitura.nextBoolean();
+                System.out.print("Sexo: ");
+                String sexo = leitura.nextLine();
 
-                listaFuncionarios.add(new Funcionario(nome, cpf, cargo, funcao, registro, diasTrabalhados, salarioBruto, contribuicaoSindical));
+                listaFuncionarios.add(new Funcionario(nome, cpf, cargo, funcao, registro, diasTrabalhados, salarioBruto, contribuicaoSindical,adiantamento, sexo));
                 break;
 
             default:

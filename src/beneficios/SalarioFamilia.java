@@ -28,15 +28,4 @@ public class SalarioFamilia {
         return  filhos * (salarioMinimo * 0.05);
         
     }
-
-    public static void main(String[] args) {
-        Scanner leitura = new Scanner(System.in);
-        SalarioFamilia salarioFamilia = new SalarioFamilia();
-
-        System.out.println("O colaborador está inserido no INSS? (true/false)");
-        boolean inss = leitura.nextBoolean();
-
-        System.out.println(salarioFamilia.inseridoInss(inss));
-        leitura.close();
-    }
 }

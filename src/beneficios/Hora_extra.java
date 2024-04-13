@@ -5,19 +5,17 @@ import java.text.DecimalFormat;
 
 public class Hora_extra {
     //Classe Main apenas para teste
-    public static void main(String[] args) {
+    public double calcularHoraExtra(double salario ) {
         
         Scanner scanner = new Scanner(System.in);
         DecimalFormat formatador = new DecimalFormat("0.00");
 
-        double salarioBruto;
+      
         int horasTrabalhadasMensal;
         int horasExtrasTrabalhadas;
         int horasExtrasTrabalhadasFeriado;
 
-        System.out.println("Informe é o salário bruto recebido");
-        salarioBruto = scanner.nextDouble();
-        formatador.format(salarioBruto);
+        formatador.format(salario);
 
         System.out.println("Informe a quantidade de horas trabalhadas no mês");
         horasTrabalhadasMensal = scanner.nextInt();
@@ -31,7 +29,7 @@ public class Hora_extra {
         final double adicionalNormal = 1.5;
         final double adicionalFeriado = 2.0;
 
-        double valorHoraNormal = salarioBruto / horasTrabalhadasMensal;
+        double valorHoraNormal = salario / horasTrabalhadasMensal;
         double valorHoraExtra = valorHoraNormal * adicionalNormal; 
         double valorHoraExtraFeriado = valorHoraNormal * adicionalFeriado;
 
@@ -44,5 +42,6 @@ public class Hora_extra {
         System.out.println("Valor total a receber por horas extras: R$" +  formatador.format(totalHorasExtras));
 
         scanner.close();
+        return totalHorasExtras;
     }
 }

@@ -39,6 +39,7 @@ public class Beneficio_insalubridade {
                 System.out.println("Não tem taxa de insalubridade.");
             }
             
+            scan.close();
             return taxaInsalubridade;
              
         }

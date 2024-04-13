@@ -1,37 +1,29 @@
 package App;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class FolhaDePagamento {
 
-    static Date data;
-    static Double valorLiquido;
-    static Double valorBruto;
-    static Double auxSalarioLiquido;
-    
-    public static Double getAuxSalarioLiquido() {
-        return auxSalarioLiquido;
-    }
-    public static void setAuxSalarioLiquido(Double auxSalarioLiquido) {
-        FolhaDePagamento.auxSalarioLiquido = auxSalarioLiquido;
-    }
-    public Date getData() {
-        return data;
-    }
-    public void setData(Date data) {
-        FolhaDePagamento.data = data;
-    }
-    public Double getValorLiquido() {
-        return valorLiquido;
-    }
-    public void setValorLiquido(Double valorLiquido) {
-        FolhaDePagamento.valorLiquido = valorLiquido;
-    }
-    public static Double getValorBruto() {
-        return valorBruto;
-    }
-    public void setValorBruto(Double valorBruto) {
-        FolhaDePagamento.valorBruto = valorBruto;
-    }
+    public static List<FolhaDePagamento> calcularFolhaPagamento() {
+        List<FolhaDePagamento> resultadoFolhaDePagamentos = new ArrayList<>();
 
+        Scanner leitura = new Scanner(System.in);
+   
+        Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0); 
+
+     return resultadoFolhaDePagamentos;   
+    }
 }
+/*
+ *        if (!listaEmpregadores.isEmpty()) {
+            System.out.println("=================================================== Dados do Empregador ===================================================");
+            Empresa empregadorSelecionado = listaEmpregadores.get(0); // Apenas para ilustrar, considere a lógica adequada para manipular a lista
+            System.out.println("\n Nome da empresa: " + empregadorSelecionado.getNome());
+            System.out.println(" CNPJ: " + empregadorSelecionado.getCnpj());
+            System.out.println(" Endereço: " + empregadorSelecionado.getEndereco());
+            System.out.println(" Contato: " + empregadorSelecionado.getContato());
+            System.out.println("\n ============================================================================================================================");
+        }
+ */
