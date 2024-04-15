@@ -5,20 +5,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Empresa {
-    private String nome;
+    private String razaoSocial;
     private String cnpj;
     private String endereco;
     private String contato;
 
-    public Empresa(String nome, String cnpj, String endereco, String contato) {
-        this.nome = nome;
+    public Empresa(String razaoSocial, String cnpj, String endereco, String contato) {
+        this.razaoSocial = razaoSocial;
         this.cnpj = cnpj;
         this.endereco = endereco;
         this.contato = contato;
     }
 
-    public String getNome() {
-        return nome;
+    public String getRazaoSocial() {
+        return razaoSocial;
     }
 
     public String getCnpj() {
@@ -61,15 +61,15 @@ public class Empresa {
 
             case 4:
                 System.out.println("Insira os dados do empregador:");
-                System.out.print("Nome da empresa: ");
-                String nome = leitura.nextLine();
+                System.out.print("Razão Social da empresa: ");
+                String razaoSocial = leitura.nextLine();
                 System.out.print("CNPJ: ");
                 String cnpj = leitura.nextLine();
                 System.out.print("Endereço: ");
                 String endereco = leitura.nextLine();
                 System.out.print("Contato: ");
                 String contato = leitura.nextLine();
-                listaEmpregadores.add(new Empresa(nome, cnpj, endereco, contato));
+                listaEmpregadores.add(new Empresa(razaoSocial, cnpj, endereco, contato));
                 break;
 
             default:
