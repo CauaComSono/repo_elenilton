@@ -12,12 +12,12 @@ public class Funcionario {
     private String registro;
     private int diasTrabalhados;
     private double salarioBruto;
+    private double salarioLiquido;
     private double contribuicaoSindical;
-    private boolean adiantamento;
     private String sexo;
 
     public Funcionario(String nomeCompleto, String cpf, String cargo, String funcao, String registro,
-                       int diasTrabalhados, double salarioBruto, double contribuicaoSindical, boolean adiantamento, String sexo) {
+            int diasTrabalhados, double salarioBruto, double contribuicaoSindical, String sexo) {
         this.nomeCompleto = nomeCompleto;
         this.cpf = cpf;
         this.cargo = cargo;
@@ -26,7 +26,6 @@ public class Funcionario {
         this.diasTrabalhados = diasTrabalhados;
         this.salarioBruto = salarioBruto;
         this.contribuicaoSindical = contribuicaoSindical;
-        this.adiantamento = adiantamento;
         this.sexo = sexo;
     }
 
@@ -62,46 +61,62 @@ public class Funcionario {
         return contribuicaoSindical;
     }
 
-    public boolean getAdiantamento() {
-        return adiantamento;
-    }
     public String getSexo() {
         return sexo;
     }
 
+    public double getAuxSalarioLiquido() {
+        return salarioLiquido;
+    }
 
-
+    public double setAuxSalarioLiquido() {
+        return salarioLiquido;
+    }
     public static List<Funcionario> dadosFuncionario() {
         List<Funcionario> listaFuncionarios = new ArrayList<>();
         Scanner leitura = new Scanner(System.in);
+        
+        int resposta;
+       
+        while (true) {
+            System.out.println("========================================================================================" +
+                    "\n Selecione se deseja escolher um funcionaro já cadastrado ou selecionar um novo:" +
+                    "\n 1 - Maria Santos;" +
+                    "\n 2 - João da Silva;" +
+                    "\n 3 - Carlos Roberto;" +
+                    "\n 4 - Cadastrar um novo;\n" +
+                    "========================================================================================");
 
-        System.out.println("========================================================================================" +
-                "\n Selecione se deseja escolher um funcionaro já cadastrado ou selecionar um novo:" +
-                "\n 1 - Maria Santos;" +
-                "\n 2 - João da Silva;" +
-                "\n 3 - Carlos Roberto;" +
-                "\n 4 - Cadastrar um novo;\n" +
-                "========================================================================================");
-        int resposta = leitura.nextInt();
+            System.out.println("Digite a opção desejada: ");
+
+            if (leitura.hasNextInt()) {
+                resposta = leitura.nextInt();
+                break;
+            } else {
+                System.out.println("Opção inválida. Por favor, insira um número inteiro.");
+                leitura.next(); // Limpar a entrada inválida
+            }
+        }
+    
+            
         switch (resposta) {
             case 1:
                 listaFuncionarios.add(new Funcionario("Maria Santos", "987.654.321-00", "Ninja de Programação",
-                        "Desenvolver soluções invisíveis", "2022002", 20, 3000.0, 100.0, true, "f"));
+                        "Desenvolver soluções invisíveis", "2022002", 20, 3000.0, 100.0, "f"));
                 break;
 
             case 2:
                 listaFuncionarios.add(new Funcionario("João da Silva", "123.456.789-00", "Gerente de Felicidade",
-                        "Fazer as pessoas sorrirem", "2022001", 22, 3500.0, 120.0,false, "m"));
+                        "Fazer as pessoas sorrirem", "2022001", 22, 3500.0, 120.0, "m"));
                 break;
 
             case 3:
                 listaFuncionarios.add(new Funcionario("Carlos Roberto", "456.789.123-00", "Mestre Churrasqueiro",
-                        "Transformar carne em poesia", "2022003", 18, 2800.0, 90.0, false, "m"));
+                        "Transformar carne em poesia", "2022003", 18, 2800.0, 90.0, "m"));
                 break;
 
             case 4:
                 System.out.print("Nome completo: ");
-                leitura.nextLine(); // Limpar o buffer do scanner
                 String nome = leitura.nextLine();
                 System.out.print("CPF: ");
                 String cpf = leitura.nextLine();
@@ -117,19 +132,18 @@ public class Funcionario {
                 double salarioBruto = leitura.nextDouble();
                 System.out.print("Contribuição sindical: R$ ");
                 double contribuicaoSindical = leitura.nextDouble();
-                System.out.print("Recebe adiantamento: true/false ");
-                boolean adiantamento = leitura.nextBoolean();
+                leitura.nextLine(); // Consumir a quebra de linha pendente
                 System.out.print("Sexo: ");
                 String sexo = leitura.nextLine();
 
-                listaFuncionarios.add(new Funcionario(nome, cpf, cargo, funcao, registro, diasTrabalhados, salarioBruto, contribuicaoSindical,adiantamento, sexo));
+                listaFuncionarios.add(new Funcionario(nome, cpf, cargo, funcao, registro, diasTrabalhados, salarioBruto,
+                        contribuicaoSindical, sexo));
                 break;
 
             default:
                 System.out.println("Opção inválida.");
                 break;
         }
-        leitura.close();
         return listaFuncionarios;
     }
 }

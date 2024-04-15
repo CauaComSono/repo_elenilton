@@ -21,7 +21,6 @@ public class Vale_Alimentacao {
         formatador.format(valorTotalVA);
         System.out.println("O valor total do vale-alimentação é: R$" + valorTotalVA);
 
-        scanner.close();
         return valorTotalVA;
     }
 }

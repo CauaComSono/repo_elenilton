@@ -1,11 +1,14 @@
 package desconto;
 
 import App.FolhaDePagamento;
+import App.Funcionario;
+
 import java.util.Scanner;
 
 public class INSS {
     
-    public String calcularINSS(){
+    public double calcularINSS(){
+        Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0); 
         
         Scanner scanner = new Scanner(System.in);
 
@@ -17,9 +20,9 @@ public class INSS {
         if(participaINSS == "YES"){
 
             double INSS;
-            double salarioBruto = FolhaDePagamento.getValorBruto();
+            double salarioBruto = listaFuncionario.getSalarioBruto();
 
-            double salario = FolhaDePagamento.getAuxSalarioLiquido();
+            double salario = listaFuncionario.getAuxSalarioLiquido();
         
                 if (salarioBruto >= 0 && salarioBruto <= 1751.81) {
                     INSS = salarioBruto * 0.08;
@@ -31,12 +34,12 @@ public class INSS {
                     INSS = 642.34;
                 }
     
-        FolhaDePagamento.setAuxSalarioLiquido(salario - INSS);
+        //listaFuncionario.setAuxSalarioLiquido(salario - INSS);
         
-        return Double.toString(INSS);
+        return INSS;
 
         } else {
-            return "O funcionário não pagará INSS";
+            return 0.0;
         }
     }
 }

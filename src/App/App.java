@@ -1,18 +1,58 @@
 package App;
 
 import java.util.List;
+import java.util.Scanner;
+
+import beneficios.Beneficios;
 
 public class App {
     public static void main(String[] args) {
+        Scanner leitura = new Scanner(System.in);
         List<Empresa> listaEmpregadores = Empresa.dadosEmpregador();
         List<Funcionario> listaFuncionarios = Funcionario.dadosFuncionario();
+        List<Beneficios> listaBeneficios = Beneficios.valoresBeneficios();
 
-        System.out.println(listaEmpregadores);
-        System.out.println(listaFuncionarios);
+       // System.out.println(listaEmpregadores);
+        //System.out.println(listaFuncionarios);
+
+
     }
 }
 
+
 /*
+        for (Beneficios beneficio : listaBeneficios) {
+            System.out.println("Adiantamento: " + beneficio.getAdiantamento());
+            System.out.println("Adicional de Tempo de Serviço: " + beneficio.getAdicionaTempoServico());
+            System.out.println("Auxílio Creche: " + beneficio.getAuxilioCreche());
+            System.out.println("Valor Insalubridade: " + beneficio.getValorInsalubridade());
+            System.out.println("Valor Taxa Noturna: " + beneficio.getValorTaxaNoturna());
+            System.out.println("Valor Periculosidade: " + beneficio.getValorPericulosidade());
+            System.out.println("Valor DSR: " + beneficio.getValorDsr());
+            System.out.println("Valor Diária: " + beneficio.getValorDiaria());
+            System.out.println("Valor Hora Extra: " + beneficio.getValorHoraExtra());
+            System.out.println("Valor Salário Família: " + beneficio.getValorSalarioFamilia());
+            System.out.println("Valor Salário Maternidade: " + beneficio.getValorSalarioMaternidade());
+            System.out.println("Valor Vale Alimentação: " + beneficio.getValorValeAlimentacao());
+            System.out.println("Valor Vale Transporte: " + beneficio.getValorValeTransporte());
+        }
+    for (Beneficios beneficio : listaBeneficios) {
+            System.out.println("Adiantamento: " + beneficio.getAdiantamento());
+            System.out.println("Adicional de Tempo de Serviço: " + beneficio.getAdicionaTempoServico());
+            System.out.println("Auxílio Creche: " + beneficio.getAuxilioCreche());
+            System.out.println("Valor Insalubridade: " + beneficio.getValorInsalubridade());
+            System.out.println("Valor Taxa Noturna: " + beneficio.getValorTaxaNoturna());
+            System.out.println("Valor Periculosidade: " + beneficio.getValorPericulosidade());
+            System.out.println("Valor DSR: " + beneficio.getValorDsr());
+            System.out.println("Valor Diária: " + beneficio.getValorDiaria());
+            System.out.println("Valor Hora Extra: " + beneficio.getValorHoraExtra());
+            System.out.println("Valor Salário Família: " + beneficio.getValorSalarioFamilia());
+            System.out.println("Valor Salário Maternidade: " + beneficio.getValorSalarioMaternidade());
+            System.out.println("Valor Vale Alimentação: " + beneficio.getValorValeAlimentacao());
+            System.out.println("Valor Vale Transporte: " + beneficio.getValorValeTransporte());
+        }
+
+
          // Exibir os dados do empregador selecionado
         if (!listaEmpregadores.isEmpty()) {
             System.out.println("=================================================== Dados do Empregador ===================================================");

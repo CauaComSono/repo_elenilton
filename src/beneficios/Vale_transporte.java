@@ -15,8 +15,7 @@ public class Vale_transporte {
 
         formatador.format(valorTotalVT);
         System.out.println("O valor total do vale-transporte é: R$" +valorTotalVT);
-
-        scanner.close();
+        
         return valorTotalVT;
     }
 }

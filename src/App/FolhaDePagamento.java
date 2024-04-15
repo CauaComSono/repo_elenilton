@@ -1,29 +1,58 @@
 package App;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import beneficios.Beneficios;
+import desconto.Descontos;
 
 public class FolhaDePagamento {
 
-    public static List<FolhaDePagamento> calcularFolhaPagamento() {
-        List<FolhaDePagamento> resultadoFolhaDePagamentos = new ArrayList<>();
+    Empresa listaEmpregadores;
+    Funcionario listaFuncionario;
+    Beneficios listaBeneficios;
+    Descontos listaDescontos;
 
-        Scanner leitura = new Scanner(System.in);
+    public double calcularSalarioLiquido(){
+        double salario = listaFuncionario.getSalarioBruto();
+
+        double valorBeneficios = calcularBeneficios();
+        double valorDescontos = calcularDescontos(salario);
+        double salarioLiquido = salario - valorDescontos + valorBeneficios;
+
+        return salarioLiquido;
+    }
    
-        Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0); 
+    private double calcularBeneficios() {
+        double beneficios = 0.0;
+        
+        beneficios += listaBeneficios.getValorHoraExtra();
+        beneficios += listaBeneficios.getValorTaxaNoturna();
+        beneficios += listaBeneficios.getValorInsalubridade();
+        beneficios += listaBeneficios.getValorPericulosidade();
+        beneficios += listaBeneficios.getValorSalarioFamilia();
+        beneficios += listaBeneficios.getValorDiaria();
+        beneficios += listaBeneficios.getAdicionaTempoServico();
+        beneficios += listaBeneficios.getAuxilioCreche();
 
-     return resultadoFolhaDePagamentos;   
+        return beneficios;
+    }
+
+    private double calcularDescontos(double salario){
+        double descontos = 0.0;
+        
+        descontos += listaDescontos.getFaltaAtraso();
+        descontos += listaDescontos.getFgts();
+        descontos += listaDescontos.getInss();
+        descontos += listaDescontos.getIrrf();    
+        
+        double valeAlimentacao = listaBeneficios.getValorValeAlimentacao(); 
+        if (valeAlimentacao != 0.0) {
+            descontos += salario * 0.1; // Aplica o desconto de 10% do salário bruto
+        }
+
+        double valeTransporte = listaBeneficios.getValorValeTransporte();
+        if (valeTransporte != 0.0) {
+            descontos += salario * 0.06; // Aplica o desconto de 6% do salário bruto
+        }
+
+        return descontos;
     }
 }
-/*
- *        if (!listaEmpregadores.isEmpty()) {
-            System.out.println("=================================================== Dados do Empregador ===================================================");
-            Empresa empregadorSelecionado = listaEmpregadores.get(0); // Apenas para ilustrar, considere a lógica adequada para manipular a lista
-            System.out.println("\n Nome da empresa: " + empregadorSelecionado.getNome());
-            System.out.println(" CNPJ: " + empregadorSelecionado.getCnpj());
-            System.out.println(" Endereço: " + empregadorSelecionado.getEndereco());
-            System.out.println(" Contato: " + empregadorSelecionado.getContato());
-            System.out.println("\n ============================================================================================================================");
-        }
- */

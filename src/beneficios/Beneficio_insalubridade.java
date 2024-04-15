@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Beneficio_insalubridade {
 
     String grauInsalubridade;
-    public Double taxaInsalubridade;
+    public Double taxaInsalubridade = 0.0;
 
 
     public Double BeneficioInsalubridade(boolean TemInsalubridade, double salario){
@@ -13,7 +13,7 @@ public class Beneficio_insalubridade {
         Scanner scan = new Scanner(System.in);
 
         if (TemInsalubridade){
-            System.out.println("Qual o grau de insalubridade?");
+            System.out.println("Qual o grau de insalubridade?\n Minimo || Médio || Máximo");
             grauInsalubridade = scan.nextLine();
 
                 if(grauInsalubridade == "minimo" || grauInsalubridade == "mínimo"){
@@ -38,8 +38,6 @@ public class Beneficio_insalubridade {
             else{
                 System.out.println("Não tem taxa de insalubridade.");
             }
-            
-            scan.close();
             return taxaInsalubridade;
              
         }

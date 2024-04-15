@@ -46,7 +46,6 @@ public class Empresa {
                             "========================================================================================");
         int resposta = leitura.nextInt();
         leitura.nextLine(); // Consumir a quebra de linha pendente
-
         switch (resposta) {
             case 1:
                 listaEmpregadores.add(new Empresa("Sorveteria Gelado no Frio", "123456789", "Avenida dos Congelados, 666", "geladonofrio@sorvetes.com"));
@@ -77,7 +76,7 @@ public class Empresa {
                 System.out.println("Opção inválida.");
                 break;
         }
-        leitura.close();
+        
         return listaEmpregadores;
     }
 }

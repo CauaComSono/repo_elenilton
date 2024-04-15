@@ -17,7 +17,6 @@ public class Adicional_tempo_servico {
         else {
             System.out.println("Não tem adicional.");
         }
-        scan.close();
         return valorAdicional;
         
     }

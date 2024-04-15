@@ -16,7 +16,7 @@ public class Beneficios {
         private double valorDsr;
         private double valorDiaria;
         private double valorHoraExtra;
-        private String valorSalarioFamilia;
+        private double valorSalarioFamilia;
         private double valorSalarioMaternidade;
         private double valorValeAlimentacao;
         private double valorValeTransporte;
@@ -24,7 +24,7 @@ public class Beneficios {
         // Construtor
         public Beneficios(double adiantamento, double adicionaTempoServico, double auxilioCreche, 
                          double valorInsalubridade, double valorTaxaNoturna, double valorPericulosidade, 
-                         double valorDsr, double valorDiaria, double valorHoraExtra, String valorSalarioFamilia, 
+                         double valorDsr, double valorDiaria, double valorHoraExtra, double valorSalarioFamilia, 
                          double valorSalarioMaternidade, double valorValeAlimentacao, double valorValeTransporte) {
             this.adiantamento = adiantamento;
             this.adicionaTempoServico = adicionaTempoServico;
@@ -77,7 +77,7 @@ public class Beneficios {
             return valorHoraExtra;
         }
     
-        public String getValorSalarioFamilia() {
+        public double getValorSalarioFamilia() {
             return valorSalarioFamilia;
         }
     
@@ -100,10 +100,17 @@ public class Beneficios {
         Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0); 
         
         double salario = listaFuncionario.getSalarioBruto();
-        boolean recebeAdiantamento = listaFuncionario.getAdiantamento();
         String sexo = listaFuncionario.getSexo();
 
         Adiantamento adiantamento = new Adiantamento();
+        System.out.print("Recebe adiantamento (true/false): ");
+        String adiantamentoStr = leitura.nextLine();
+        boolean recebeAdiantamento = false;
+        if (adiantamentoStr.equalsIgnoreCase("true") || adiantamentoStr.equalsIgnoreCase("false")) {
+            recebeAdiantamento = Boolean.parseBoolean(adiantamentoStr);
+        } else {
+            System.out.println("Valor inválido para adiantamento. Usando o valor padrão: false.");
+        }
         double valorAdiantamento  = adiantamento.calcularValorAdiantamento(recebeAdiantamento, salario);
 
         System.out.println("Você recebe adicional de tempo de serviço? true/false");
@@ -119,7 +126,7 @@ public class Beneficios {
         boolean recebeInsalubridade = leitura.nextBoolean();
         double valorInsalubridade = insalubridade.BeneficioInsalubridade(recebeInsalubridade,salario);
 
-        System.out.println("Você recebe adicional de horario noturno?");
+        System.out.println("Você recebe adicional de horario noturno?true/false");
         Beneficio_noturno bonusNoturno = new Beneficio_noturno();
         boolean recebeTaxaNoturna = leitura.nextBoolean();
         double valorTaxaNoturna = bonusNoturno.BeneficioNoturno(recebeTaxaNoturna,salario);
@@ -146,7 +153,7 @@ public class Beneficios {
         System.out.println("recebe INSS? true/false");
         SalarioFamilia salarioFamilia = new SalarioFamilia();
         boolean recebeInss  = leitura.nextBoolean();
-        String valorSarioFamlia = salarioFamilia.inseridoInss(recebeInss);
+        double valorSarioFamlia = salarioFamilia.inseridoInss(recebeInss);
 
         System.out.println("Que dia saiu de afastamento de maternidade?");
         SalarioMaternidade salarioMaternidade = new SalarioMaternidade();
@@ -160,7 +167,6 @@ public class Beneficios {
         double valorValeTrasporte = valeTransporte.calcularValeTransporte(salario);
 
         listaBeneficios.add (new Beneficios(valorAdiantamento, adicionaTempoServico, auxilioCreche, valorInsalubridade, valorTaxaNoturna, valorpericulosidade, valorDsr, valorDiaria, valorHoraExtra, valorSarioFamlia, valorSalariomaternidade, valorValeAlimentacao, valorValeTrasporte));
-        leitura.close();
         return listaBeneficios;
     }
 }

@@ -2,11 +2,9 @@ package desconto;
 
 import java.util.Scanner;
 
-import App.FolhaDePagamento;
-
 public class Falta_atraso {
             
-        public String calculaFaltaAtraso(){
+        public double calculaFaltaAtraso(){
 
             Scanner scanner = new Scanner(System.in);
 
@@ -26,11 +24,10 @@ public class Falta_atraso {
                 System.out.println("Quantas horas o funcionário atrasou? (responda apenas com números inteiros)");
                 HorasFaltadas = scanner.nextInt();
 
-                double salario = FolhaDePagamento.getAuxSalarioLiquido();
-                    
-                FolhaDePagamento.setAuxSalarioLiquido(salario - (DiasFaltados*DSR) - (HorasFaltadas*HoraTrabalho));
+               // FolhaDePagamento.setAuxSalarioLiquido(salario - (DiasFaltados*DSR) - (HorasFaltadas*HoraTrabalho));
 
-                return Double.toString((DiasFaltados*DSR)+(HorasFaltadas*HoraTrabalho));
+               double valorFaltaAtraso = (DiasFaltados*DSR)+(HorasFaltadas*HoraTrabalho);
+                return valorFaltaAtraso;
             }
 
 }

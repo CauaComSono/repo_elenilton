@@ -1,16 +1,17 @@
 package desconto;
 
 import App.FolhaDePagamento;
+import App.Funcionario;
 
 public class IRRF {
     
-    public String calculaIRRF(){
-        
+    public double calculaIRRF(){
+        Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0); 
         double IRRF;
         
-        double salarioBruto = FolhaDePagamento.getValorBruto();
+        double salarioBruto = listaFuncionario.getSalarioBruto();
 
-        double salario = FolhaDePagamento.getAuxSalarioLiquido();
+        double salario = listaFuncionario.getAuxSalarioLiquido();
     
             if (salarioBruto <= 1903.98) {
                 IRRF = 0;
@@ -24,8 +25,8 @@ public class IRRF {
                 IRRF = salarioBruto * 0.275 - 869.36;
             }
 
-        FolhaDePagamento.setAuxSalarioLiquido(salario - IRRF);
+        //listaFuncionario.setAuxSalarioLiquido(salario - IRRF);
 
-        return Double.toString(IRRF);
+        return IRRF;
     }
 }

@@ -1,22 +1,23 @@
 package desconto;
 
 import App.FolhaDePagamento;
+import App.Funcionario;
 
 public class FGTS {
     
-        public String calculaFGTS(){
+        public double calculaFGTS(){
+                Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0); 
 
                 double FGTS;
-
-                double salarioBruto = FolhaDePagamento.getValorBruto();
+                double salarioBruto = listaFuncionario.getSalarioBruto();
                 
                 FGTS = salarioBruto * 0.08;
 
-                double salario = FolhaDePagamento.getAuxSalarioLiquido();
+                double salario = listaFuncionario.getAuxSalarioLiquido();
                 
-                FolhaDePagamento.setAuxSalarioLiquido(salario-FGTS);
+              // listaFuncionario.setAuxSalarioLiquido(salario-FGTS);
 
-                return Double.toString(FGTS);
+                return FGTS;
         }
 
 }

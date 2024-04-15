@@ -41,7 +41,6 @@ public class Hora_extra {
         System.out.println("Valor a receber por horas extras referente a feriados: R$" + formatador.format(somaHorasExtrasFeriado));
         System.out.println("Valor total a receber por horas extras: R$" +  formatador.format(totalHorasExtras));
 
-        scanner.close();
         return totalHorasExtras;
     }
 }
