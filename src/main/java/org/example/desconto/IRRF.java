@@ -25,8 +25,6 @@ public class IRRF {
                 IRRF = salarioBruto * 0.275 - 869.36;
             }
 
-        //listaFuncionario.setAuxSalarioLiquido(salario - IRRF);
-
         return IRRF;
     }
 }

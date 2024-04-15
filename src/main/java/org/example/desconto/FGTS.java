@@ -15,8 +15,6 @@ public class FGTS {
 
                 double salario = listaFuncionario.getAuxSalarioLiquido();
                 
-              // listaFuncionario.setAuxSalarioLiquido(salario-FGTS);
-
                 return FGTS;
         }
 

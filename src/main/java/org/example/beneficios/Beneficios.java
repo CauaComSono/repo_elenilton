@@ -121,7 +121,7 @@ public class Beneficios {
         AuxilioCreche creche = new AuxilioCreche();
         double auxilioCreche = creche.calcularAuxilioCreche();
 
-        System.out.println("Você recebe adicional de tempo de serviço? true/false");
+        System.out.println("Você recebe Benefício de Insalubridade? true/false");
         Beneficio_insalubridade insalubridade = new Beneficio_insalubridade();
         boolean recebeInsalubridade = leitura.nextBoolean();
         double valorInsalubridade = insalubridade.BeneficioInsalubridade(recebeInsalubridade,salario);

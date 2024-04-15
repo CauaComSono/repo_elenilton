@@ -42,7 +42,8 @@ public class FolhaDePagamento {
         descontos += listaDescontos.getFgts();
         descontos += listaDescontos.getInss();
         descontos += listaDescontos.getIrrf();    
-        
+        descontos += listaDescontos.getPensaoAlimenticia();
+
         double valeAlimentacao = listaBeneficios.getValorValeAlimentacao(); 
         if (valeAlimentacao != 0.0) {
             descontos += salario * 0.1; // Aplica o desconto de 10% do salário bruto

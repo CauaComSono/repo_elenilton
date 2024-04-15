@@ -33,9 +33,7 @@ public class INSS {
                 } else {
                     INSS = 642.34;
                 }
-    
-        //listaFuncionario.setAuxSalarioLiquido(salario - INSS);
-        
+            
         return INSS;
 
         } else {
