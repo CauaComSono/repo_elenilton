@@ -1,4 +1,4 @@
-package beneficios;
+package org.example.beneficios;
 
 import java.util.Scanner;
 

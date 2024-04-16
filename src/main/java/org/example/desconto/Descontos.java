@@ -1,7 +1,10 @@
-package desconto;
+package org.example.desconto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
+import org.example.App.Funcionario;
 public class Descontos {
     private double faltaAtraso;
     private double fgts;
@@ -35,19 +38,25 @@ public class Descontos {
 
     public static List<Descontos> valoresDescontos() {
         List<Descontos> listaDescontos = new ArrayList<>();
+        Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0);
+        Double salario = listaFuncionario.getSalarioBruto();
+        Scanner scan = new Scanner(System.in);
 
         FaltaAtraso falta = new FaltaAtraso();
         FGTS fgts = new FGTS();
         INSS inss = new INSS();
         IRRF irrf = new IRRF();
+        PensaoAlimenticia pensaoAlimenticia = new PensaoAlimenticia(); 
 
         double faltaAtraso = falta.calculaFaltaAtraso();
         double descontoFgts = fgts.calculaFGTS();
         double valorInss = inss.calcularINSS();
         double valorIrrf = irrf.calculaIRRF();
-        double pensaoAlimenticia = PensaoAlimenticia.calculaPensaoAlimenticia();
+        System.out.println("Você paga pensão alimenticia? true/false");
+        boolean respostaPensaoAlimenticia = scan.nextBoolean();
+        double valorpensaoAlimenticia = pensaoAlimenticia.calculaPensaoAlimenticia(respostaPensaoAlimenticia, salario);
 
-        listaDescontos.add(new Descontos(faltaAtraso, descontoFgts, valorInss, valorIrrf, pensaoAlimenticia));
+        listaDescontos.add(new Descontos(faltaAtraso, descontoFgts, valorInss, valorIrrf, valorpensaoAlimenticia));
 
         return listaDescontos;
     }    

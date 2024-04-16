@@ -3,8 +3,8 @@ preferencialmente, aos domingos, mas isso não é obrigatório.
 O repouso semanal deve ser de 24 horas, sem possibilidade de divisão desse tempo em horas diárias. Por outro lado, o colaborador que não cumprir
  sua jornada de trabalho, integralmente, poderá perder esse descanso.
 */
-package beneficios;
-public class Descanso_remunerado {
+package org.example.beneficios;
+public class DescansoRemunerado {
 
     // Construtor e outros métodos da classe
 

@@ -1,7 +1,7 @@
-package desconto;
+package org.example.desconto;
 
-import App.FolhaDePagamento;
-import App.Funcionario;
+import org.example.App.FolhaDePagamento;
+import org.example.App.Funcionario;
 
 public class FGTS {
     

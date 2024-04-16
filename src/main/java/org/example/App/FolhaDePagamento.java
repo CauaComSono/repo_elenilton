@@ -1,7 +1,7 @@
-package App;
+package org.example.App;
 
-import beneficios.Beneficios;
-import desconto.Descontos;
+import org.example.beneficios.Beneficios;
+import org.example.desconto.Descontos;
 
 public class FolhaDePagamento {
 
@@ -42,7 +42,7 @@ public class FolhaDePagamento {
         descontos += listaDescontos.getFgts();
         descontos += listaDescontos.getInss();
         descontos += listaDescontos.getIrrf();    
-        descontos += listaDescontos.getPensaoAlimenticia();
+       // descontos += listaDescontos.getPensaoAlimenticia();
 
         double valeAlimentacao = listaBeneficios.getValorValeAlimentacao(); 
         if (valeAlimentacao != 0.0) {

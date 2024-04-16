@@ -1,4 +1,4 @@
-package App;
+package org.example.App;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +78,7 @@ public class Funcionario {
         
         int resposta;
        
-        while (true) {
+
             System.out.println("========================================================================================" +
                     "\n Selecione se deseja escolher um funcionaro já cadastrado ou selecionar um novo:" +
                     "\n 1 - Maria Santos;" +
@@ -88,15 +88,7 @@ public class Funcionario {
                     "========================================================================================");
 
             System.out.println("Digite a opção desejada: ");
-
-            if (leitura.hasNextInt()) {
-                resposta = leitura.nextInt();
-                break;
-            } else {
-                System.out.println("Opção inválida. Por favor, insira um número inteiro.");
-                leitura.next(); // Limpar a entrada inválida
-            }
-        }
+            resposta = leitura.nextInt();
     
             
         switch (resposta) {

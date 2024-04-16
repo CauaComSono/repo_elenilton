@@ -1,7 +1,7 @@
-package beneficios;
+package org.example.beneficios;
 
 
-public class Diaria_viagem {
+public class DiariaViagem {
     
     // Método para calcular o valor das diárias para viagens iouehfweofhwefweho
     public double calcularValorDiarias(int diasViagem) {

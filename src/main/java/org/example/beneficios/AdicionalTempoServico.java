@@ -1,8 +1,8 @@
-package beneficios;
+package org.example.beneficios;
 
 import java.util.Scanner;
 
-public class Adicional_tempo_servico {
+public class AdicionalTempoServico {
 
         public double valorAdicional;
 

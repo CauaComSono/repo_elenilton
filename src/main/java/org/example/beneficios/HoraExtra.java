@@ -1,9 +1,9 @@
-package beneficios;
+package org.example.beneficios;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Hora_extra {
+public class HoraExtra {
     //Classe Main apenas para teste
     public double calcularHoraExtra(double salario ) {
         

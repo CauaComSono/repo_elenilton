@@ -1,9 +1,9 @@
-package beneficios;
+package org.example.beneficios;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Vale_Alimentacao {
+public class ValeAlimentacao {
    
    public double calcularValeAlimentacao() {
         

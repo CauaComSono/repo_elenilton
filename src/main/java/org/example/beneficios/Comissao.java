@@ -1,4 +1,4 @@
-package beneficios;
+package org.example.beneficios;
 public class Comissao{
  
         private double valorDacomissao;

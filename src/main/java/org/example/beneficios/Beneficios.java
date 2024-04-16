@@ -1,10 +1,10 @@
-package beneficios;
+package org.example.beneficios;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import App.Funcionario;
+import org.example.App.Funcionario;
 
 public class Beneficios {
         private double adiantamento;
@@ -115,39 +115,39 @@ public class Beneficios {
 
         System.out.println("Você recebe adicional de tempo de serviço? true/false");
         boolean recebeAdicional = leitura.nextBoolean();
-        Adicional_tempo_servico  adicionalServico = new Adicional_tempo_servico();
+        AdicionalTempoServico  adicionalServico = new AdicionalTempoServico();
         double adicionaTempoServico = adicionalServico.AdcionalTempo(recebeAdicional);
 
         AuxilioCreche creche = new AuxilioCreche();
         double auxilioCreche = creche.calcularAuxilioCreche();
 
         System.out.println("Você recebe Benefício de Insalubridade? true/false");
-        Beneficio_insalubridade insalubridade = new Beneficio_insalubridade();
+        BeneficioInsalubridade insalubridade = new BeneficioInsalubridade();
         boolean recebeInsalubridade = leitura.nextBoolean();
-        double valorInsalubridade = insalubridade.BeneficioInsalubridade(recebeInsalubridade,salario);
+        double valorInsalubridade = insalubridade.calculoBeneficioInsalubridade(recebeInsalubridade,salario);
 
         System.out.println("Você recebe adicional de horario noturno?true/false");
-        Beneficio_noturno bonusNoturno = new Beneficio_noturno();
+        BeneficioNoturno bonusNoturno = new BeneficioNoturno();
         boolean recebeTaxaNoturna = leitura.nextBoolean();
-        double valorTaxaNoturna = bonusNoturno.BeneficioNoturno(recebeTaxaNoturna,salario);
+        double valorTaxaNoturna = bonusNoturno.calculoBeneficioNoturno(recebeTaxaNoturna,salario);
 
         
         System.out.println("Você recebe o valor de periculosidade? true/false");
-        Beneficio_periculosidade periculosidade = new Beneficio_periculosidade();
+        BeneficioPericulosidade periculosidade = new BeneficioPericulosidade();
         boolean recebePericulosidade = leitura.nextBoolean();
-        double valorpericulosidade = periculosidade.BeneficioPerciulosidade(recebePericulosidade,salario);
+        double valorpericulosidade = periculosidade.calculoBeneficioPerciulosidade(recebePericulosidade,salario);
 
         System.out.println("Você cumpriu a sua jornada mensal? true/false");
-        Descanso_remunerado dsr = new Descanso_remunerado();
+        DescansoRemunerado dsr = new DescansoRemunerado();
         boolean recebeDsr = leitura.nextBoolean();
         double valorDsr = dsr.calcularRepousoSemanal(recebeDsr,salario);
 
         System.out.println("quantos dias ficou de viagem?");
-        Diaria_viagem diariaViagem = new Diaria_viagem();
+        DiariaViagem diariaViagem = new DiariaViagem();
         int diasDeViagem = leitura.nextInt();
         double valorDiaria = diariaViagem.calcularValorDiarias(diasDeViagem);
 
-        Hora_extra horaExtra = new Hora_extra();
+        HoraExtra horaExtra = new HoraExtra();
         double valorHoraExtra = horaExtra.calcularHoraExtra(salario);
 
         System.out.println("recebe INSS? true/false");
@@ -160,10 +160,10 @@ public class Beneficios {
         String afastamentoMaternidade  = leitura.nextLine();
         double valorSalariomaternidade = salarioMaternidade.calcularSalarioMaternidade(salario, afastamentoMaternidade, sexo);
 
-        Vale_Alimentacao valeAlimentacao = new Vale_Alimentacao();
+        ValeAlimentacao valeAlimentacao = new ValeAlimentacao();
         double valorValeAlimentacao = valeAlimentacao.calcularValeAlimentacao();
 
-        Vale_transporte valeTransporte = new Vale_transporte();
+        ValeTransporte valeTransporte = new ValeTransporte();
         double valorValeTrasporte = valeTransporte.calcularValeTransporte(salario);
 
         listaBeneficios.add (new Beneficios(valorAdiantamento, adicionaTempoServico, auxilioCreche, valorInsalubridade, valorTaxaNoturna, valorpericulosidade, valorDsr, valorDiaria, valorHoraExtra, valorSarioFamlia, valorSalariomaternidade, valorValeAlimentacao, valorValeTrasporte));

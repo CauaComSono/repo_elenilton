@@ -1,14 +1,14 @@
-package beneficios;
+package org.example.beneficios;
 
 import java.util.Scanner;
 
-public class Beneficio_insalubridade {
+public class BeneficioInsalubridade {
 
     String grauInsalubridade;
     public Double taxaInsalubridade = 0.0;
 
 
-    public Double BeneficioInsalubridade(boolean TemInsalubridade, double salario){
+    public Double calculoBeneficioInsalubridade(boolean TemInsalubridade, double salario){
 
         Scanner scan = new Scanner(System.in);
 

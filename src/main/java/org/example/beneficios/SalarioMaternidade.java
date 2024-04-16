@@ -1,4 +1,4 @@
-package beneficios;
+package org.example.beneficios;
 
 public class SalarioMaternidade {
     private final double TAXA_SALARIO_MATERNIDADE = 0.8; // Taxa de substituição do salário durante o período de afastamento

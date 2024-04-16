@@ -1,11 +1,11 @@
-package beneficios;
+package org.example.beneficios;
 
-public class Beneficio_noturno {
+public class BeneficioNoturno {
     
    public Double taxaNoturna;
 
 
-    public Double BeneficioNoturno (boolean TemBeneficioNoturno, double salario) {
+    public Double calculoBeneficioNoturno (boolean TemBeneficioNoturno, double salario) {
         System.out.println("Você recebe Beneficio de trabalho Noturno?");
         if (TemBeneficioNoturno) {
             

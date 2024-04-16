@@ -1,9 +1,9 @@
-package App;
+package org.example.App;
 
 import java.util.List;
 import java.util.Scanner;
 
-import beneficios.Beneficios;
+import org.example.beneficios.Beneficios;
 
 public class App {
     public static void main(String[] args) {

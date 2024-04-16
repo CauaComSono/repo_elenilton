@@ -1,12 +1,12 @@
-package beneficios;
+package org.example.beneficios;
 
 
-public class Beneficio_periculosidade {
+public class BeneficioPericulosidade {
 
     public Double taxaPericulosidade;
 
 
-    public Double BeneficioPerciulosidade (boolean TemPericulosidade, double salario){
+    public Double calculoBeneficioPerciulosidade (boolean TemPericulosidade, double salario){
         System.out.println("Você recebe beneficio de periculosidade?");
 
         if(TemPericulosidade){

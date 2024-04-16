@@ -1,4 +1,4 @@
-package desconto;
+package org.example.desconto;
 
 import java.util.Scanner;
 

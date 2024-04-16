@@ -1,9 +1,9 @@
-package beneficios;
+package org.example.beneficios;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Vale_transporte {
+public class ValeTransporte {
     public double calcularValeTransporte(double salario) {
         
         Scanner scanner = new Scanner(System.in);
