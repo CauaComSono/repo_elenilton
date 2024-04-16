@@ -10,10 +10,11 @@ public class App {
         Scanner leitura = new Scanner(System.in);
         List<Empresa> listaEmpregadores = Empresa.dadosEmpregador();
         List<Funcionario> listaFuncionarios = Funcionario.dadosFuncionario();
-        List<Beneficios> listaBeneficios = Beneficios.valoresBeneficios();
+        Funcionario funcionario = new Funcionario();
+        FolhaDePagamento folhaDePagamento = new FolhaDePagamento();
 
-       // System.out.println(listaEmpregadores);
-        //System.out.println(listaFuncionarios);
+        funcionario.setAuxSalarioLiquido(folhaDePagamento.calcularSalarioLiquido());
+
 
 
     }

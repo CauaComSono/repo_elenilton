@@ -28,6 +28,7 @@ public class Funcionario {
         this.contribuicaoSindical = contribuicaoSindical;
         this.sexo = sexo;
     }
+    public Funcionario(){}
 
     public String getNomeCompleto() {
         return nomeCompleto;
@@ -69,7 +70,7 @@ public class Funcionario {
         return salarioLiquido;
     }
 
-    public double setAuxSalarioLiquido() {
+    public double setAuxSalarioLiquido(double valorSalarioLiquido) {
         return salarioLiquido;
     }
     public static List<Funcionario> dadosFuncionario() {
