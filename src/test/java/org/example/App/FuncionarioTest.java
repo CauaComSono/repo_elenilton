@@ -12,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
         public void testDadosFuncionario() {
             List<Funcionario> listaFuncionarios = Funcionario.dadosFuncionario();
             assertEquals(3, listaFuncionarios.size()); // Verifica se há três funcionários cadastrados
-            // Adicione mais verificações conforme necessário para garantir que os dados dos funcionários estejam corretos
+            assertEquals("Maria Santos", listaFuncionarios.get(0).getNomeCompleto());
+            assertEquals("João da Silva", listaFuncionarios.get(1).getNomeCompleto());
+            assertEquals("Carlos Roberto", listaFuncionarios.get(2).getNomeCompleto());
         }
     }

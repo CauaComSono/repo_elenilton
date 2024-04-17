@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.example.App.Funcionario;
+import org.example.beneficios.Beneficios;
+
 public class Descontos {
     private double faltaAtraso;
     private double fgts;
@@ -51,9 +53,9 @@ public class Descontos {
         PensaoAlimenticia pensaoAlimenticia = new PensaoAlimenticia(); 
 
         double faltaAtraso = falta.calculaFaltaAtraso();
-        double descontoFgts = fgts.calculaFGTS();
-        double valorInss = inss.calcularINSS();
-        double valorIrrf = irrf.calculaIRRF();
+        double descontoFgts = fgts.calculaFGTS(listaFuncionarios);
+        double valorInss = inss.calcularINSS(listaFuncionarios);
+        double valorIrrf = irrf.calculaIRRF(listaFuncionarios);
         System.out.println("Você paga pensão alimenticia? true/false");
         boolean respostaPensaoAlimenticia = scan.nextBoolean();
         double valorpensaoAlimenticia = pensaoAlimenticia.calculaPensaoAlimenticia(respostaPensaoAlimenticia, salario);
@@ -61,5 +63,6 @@ public class Descontos {
         listaDescontos.add(new Descontos(faltaAtraso, descontoFgts, valorInss, valorIrrf, valorpensaoAlimenticia));
 
         return listaDescontos;
-    }    
+    }
+
 }

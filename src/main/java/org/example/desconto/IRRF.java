@@ -3,15 +3,15 @@ package org.example.desconto;
 import org.example.App.FolhaDePagamento;
 import org.example.App.Funcionario;
 
+import java.util.List;
+
 public class IRRF {
     
-    public double calculaIRRF(){
-        Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0); 
+    public double calculaIRRF(List<Funcionario> listaFuncionarios){
+        Funcionario funcionario = listaFuncionarios.get(0);
         double IRRF;
         
-        double salarioBruto = listaFuncionario.getSalarioBruto();
-
-        double salario = listaFuncionario.getSalarioLiquido();
+        double salarioBruto = funcionario.getSalarioBruto();
     
             if (salarioBruto <= 1903.98) {
                 IRRF = 0;

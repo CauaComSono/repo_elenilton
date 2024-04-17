@@ -156,10 +156,8 @@ public class Beneficios {
         boolean recebeInss  = leitura.nextBoolean();
         double valorSarioFamlia = salarioFamilia.inseridoInss(recebeInss);
 
-        System.out.println("Que dia saiu de afastamento de maternidade?");
         SalarioMaternidade salarioMaternidade = new SalarioMaternidade();
-        String afastamentoMaternidade  = leitura.nextLine();
-        double valorSalariomaternidade = salarioMaternidade.calcularSalarioMaternidade(salario, afastamentoMaternidade, sexo);
+        double valorSalariomaternidade = salarioMaternidade.calcularSalarioMaternidade(salario, sexo);
 
         ValeAlimentacao valeAlimentacao = new ValeAlimentacao();
         double valorValeAlimentacao = valeAlimentacao.calcularValeAlimentacao();
