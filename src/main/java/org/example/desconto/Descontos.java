@@ -36,10 +36,12 @@ public class Descontos {
         return pensaoAlimenticia;
     }
 
-    public static List<Descontos> valoresDescontos() {
+    public static List<Descontos> valoresDescontos(List<Funcionario> listaFuncionarios) {
         List<Descontos> listaDescontos = new ArrayList<>();
-        Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0);
-        Double salario = listaFuncionario.getSalarioBruto();
+        Funcionario funcionario = listaFuncionarios.get(0);
+
+        double salario = funcionario.getSalarioBruto();
+
         Scanner scan = new Scanner(System.in);
 
         FaltaAtraso falta = new FaltaAtraso();

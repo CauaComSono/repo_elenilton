@@ -7,8 +7,6 @@ public class BeneficioPericulosidade {
 
 
     public Double calculoBeneficioPerciulosidade (boolean TemPericulosidade, double salario){
-        System.out.println("Você recebe beneficio de periculosidade?");
-
         if(TemPericulosidade){
             taxaPericulosidade = salario * 0.3;
         }

@@ -12,7 +12,7 @@ public class SalarioMaternidade {
             int duracaoSalarioMaternidadeDias = 120;
             salarioMaternidade = salario * TAXA_SALARIO_MATERNIDADE * duracaoSalarioMaternidadeDias;
    
-        } if (sexo.equalsIgnoreCase("m")) {
+        }else if (sexo.equalsIgnoreCase("m")) {
             System.out.println("Você não recebe salario maternidade");
             salarioMaternidade = 0.0;
 

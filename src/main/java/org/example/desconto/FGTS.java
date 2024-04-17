@@ -13,7 +13,7 @@ public class FGTS {
                 
                 FGTS = salarioBruto * 0.08;
 
-                double salario = listaFuncionario.getAuxSalarioLiquido();
+                double salario = listaFuncionario.getSalarioLiquido();
                 
                 return FGTS;
         }

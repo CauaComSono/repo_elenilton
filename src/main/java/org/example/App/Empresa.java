@@ -36,35 +36,40 @@ public class Empresa {
     public static List<Empresa> dadosEmpregador() {
         List<Empresa> listaEmpregadores = new ArrayList<>();
         Scanner leitura = new Scanner(System.in);
-        
+
         System.out.println("========================================================================================"+
-                            "\n Selecione se deseja escolher um empregador já cadastrado ou selecionar um novo:"+
-                            "\n 1 - Sorveteria Gelado no Frio;"+
-                            "\n 2 - Academia Musculação de Bolso;"+
-                            "\n 3 - Pet Shop Miado Feliz;"+
-                            "\n 4 - Cadastrar um novo;\n"+
-                            "========================================================================================");
+                "\n Selecione se deseja escolher um empregador já cadastrado ou selecionar um novo:"+
+                "\n 1 - Sorveteria Gelado no Frio;"+
+                "\n 2 - Academia Musculação de Bolso;"+
+                "\n 3 - Pet Shop Miado Feliz;"+
+                "\n 4 - Cadastrar um novo;\n"+
+                "========================================================================================");
         int resposta = leitura.nextInt();
         leitura.nextLine(); // Consumir a quebra de linha pendente
         switch (resposta) {
             case 1:
-                listaEmpregadores.add(new Empresa("Sorveteria Gelado no Frio", "123456789", "Avenida dos Congelados, 666", "geladonofrio@sorvetes.com"));
+                listaEmpregadores.add(new Empresa("Sorveteria Gelado no Frio", "12.345.678/0001-90", "Avenida dos Congelados, 666", "geladonofrio@sorvetes.com"));
                 break;
 
             case 2:
-                listaEmpregadores.add(new Empresa("Academia Musculação de Bolso", "987654321", "Rua do Halteres, 123", "contato@musculacaodebolso.com"));
+                listaEmpregadores.add(new Empresa("Academia Musculação de Bolso", "98.765.432/0001-10", "Rua do Halteres, 123", "contato@musculacaodebolso.com"));
                 break;
 
             case 3:
-                listaEmpregadores.add(new Empresa("Pet Shop Miado Feliz", "567890123", "Travessa dos Gatos, 789", "miadofeliz@petshop.com"));
+                listaEmpregadores.add(new Empresa("Pet Shop Miado Feliz", "56.789.012/0001-34", "Travessa dos Gatos, 789", "miadofeliz@petshop.com"));
                 break;
 
             case 4:
                 System.out.println("Insira os dados do empregador:");
                 System.out.print("Razão Social da empresa: ");
                 String razaoSocial = leitura.nextLine();
-                System.out.print("CNPJ: ");
+                System.out.print("CNPJ (formato XX.XXX.XXX/XXXX-XX): ");
                 String cnpj = leitura.nextLine();
+                // Validar formato do CNPJ
+                while (!cnpj.matches("\\d{2}\\.\\d{3}\\.\\d{3}/\\d{4}-\\d{2}")) {
+                    System.out.println("CNPJ inválido! Digite novamente: ");
+                    cnpj = leitura.nextLine();
+                }
                 System.out.print("Endereço: ");
                 String endereco = leitura.nextLine();
                 System.out.print("Contato: ");
@@ -76,7 +81,7 @@ public class Empresa {
                 System.out.println("Opção inválida.");
                 break;
         }
-        
+
         return listaEmpregadores;
     }
 }

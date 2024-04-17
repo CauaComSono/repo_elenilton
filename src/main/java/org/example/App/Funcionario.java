@@ -17,7 +17,7 @@ public class Funcionario {
     private String sexo;
 
     public Funcionario(String nomeCompleto, String cpf, String cargo, String funcao, String registro,
-            int diasTrabalhados, double salarioBruto, double contribuicaoSindical, String sexo) {
+                       int diasTrabalhados, double salarioBruto, double contribuicaoSindical, String sexo) {
         this.nomeCompleto = nomeCompleto;
         this.cpf = cpf;
         this.cargo = cargo;
@@ -66,32 +66,30 @@ public class Funcionario {
         return sexo;
     }
 
-    public double getAuxSalarioLiquido() {
+    public double getSalarioLiquido() {
         return salarioLiquido;
     }
 
-    public double setAuxSalarioLiquido(double valorSalarioLiquido) {
-        return salarioLiquido;
+    public void setSalarioLiquido(double salarioLiquido) {
+        this.salarioLiquido = salarioLiquido;
     }
+
     public static List<Funcionario> dadosFuncionario() {
         List<Funcionario> listaFuncionarios = new ArrayList<>();
         Scanner leitura = new Scanner(System.in);
-        
-        int resposta;
-       
 
-            System.out.println("========================================================================================" +
-                    "\n Selecione se deseja escolher um funcionaro já cadastrado ou selecionar um novo:" +
-                    "\n 1 - Maria Santos;" +
-                    "\n 2 - João da Silva;" +
-                    "\n 3 - Carlos Roberto;" +
-                    "\n 4 - Cadastrar um novo;\n" +
-                    "========================================================================================");
+        System.out.println("========================================================================================" +
+                "\n Selecione se deseja escolher um funcionário já cadastrado ou selecionar um novo:" +
+                "\n 1 - Maria Santos;" +
+                "\n 2 - João da Silva;" +
+                "\n 3 - Carlos Roberto;" +
+                "\n 4 - Cadastrar um novo;\n" +
+                "========================================================================================");
 
-            System.out.println("Digite a opção desejada: ");
-            resposta = leitura.nextInt();
-    
-            
+        System.out.println("Digite a opção desejada: ");
+        int resposta = leitura.nextInt();
+        leitura.nextLine(); // Consumir a quebra de linha pendente
+
         switch (resposta) {
             case 1:
                 listaFuncionarios.add(new Funcionario("Maria Santos", "987.654.321-00", "Ninja de Programação",
@@ -111,8 +109,13 @@ public class Funcionario {
             case 4:
                 System.out.print("Nome completo: ");
                 String nome = leitura.nextLine();
-                System.out.print("CPF: ");
+                System.out.print("CPF (formato XXX.XXX.XXX-XX): ");
                 String cpf = leitura.nextLine();
+                // Validar formato do CPF
+                while (!cpf.matches("\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")) {
+                    System.out.println("CPF inválido! Digite novamente: ");
+                    cpf = leitura.nextLine();
+                }
                 System.out.print("Cargo: ");
                 String cargo = leitura.nextLine();
                 System.out.print("Função: ");

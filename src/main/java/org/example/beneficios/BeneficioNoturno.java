@@ -6,7 +6,6 @@ public class BeneficioNoturno {
 
 
     public Double calculoBeneficioNoturno (boolean TemBeneficioNoturno, double salario) {
-        System.out.println("Você recebe Beneficio de trabalho Noturno?");
         if (TemBeneficioNoturno) {
             
             taxaNoturna = salario * 0.2;

@@ -93,14 +93,15 @@ public class Beneficios {
             return valorValeTransporte;
         }
     
-    public static List<Beneficios> valoresBeneficios() {
+    public static List<Beneficios> valoresBeneficios(List<Funcionario> listaFuncionarios) {
         List<Beneficios> listaBeneficios = new ArrayList<>();
 
         Scanner leitura = new Scanner(System.in);
-        Funcionario listaFuncionario = Funcionario.dadosFuncionario().get(0); 
-        
-        double salario = listaFuncionario.getSalarioBruto();
-        String sexo = listaFuncionario.getSexo();
+        Funcionario funcionario = listaFuncionarios.get(0);
+
+        double salario = funcionario.getSalarioBruto();
+
+        String sexo = funcionario.getSexo();
 
         Adiantamento adiantamento = new Adiantamento();
         System.out.print("Recebe adiantamento (true/false): ");

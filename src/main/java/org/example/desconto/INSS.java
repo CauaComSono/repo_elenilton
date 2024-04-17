@@ -22,7 +22,7 @@ public class INSS {
             double INSS;
             double salarioBruto = listaFuncionario.getSalarioBruto();
 
-            double salario = listaFuncionario.getAuxSalarioLiquido();
+            double salario = listaFuncionario.getSalarioLiquido();
         
                 if (salarioBruto >= 0 && salarioBruto <= 1751.81) {
                     INSS = salarioBruto * 0.08;

@@ -11,7 +11,7 @@ public class IRRF {
         
         double salarioBruto = listaFuncionario.getSalarioBruto();
 
-        double salario = listaFuncionario.getAuxSalarioLiquido();
+        double salario = listaFuncionario.getSalarioLiquido();
     
             if (salarioBruto <= 1903.98) {
                 IRRF = 0;
