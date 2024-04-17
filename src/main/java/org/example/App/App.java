@@ -106,19 +106,18 @@ public class App {
                 case 5:
                     double salarioLiquido = folhaDePagamento.calcularSalarioLiquido(funcionario, listaBeneficios, listaDescontos);
                     System.out.println(
-                            "================================================== Resumo folha de pagamento =================================================="+
+                                 "=================================================== Resumo folha de pagamento ==================================================="+
                                     "\n Empregador: " + empregadorSelecionado.getRazaoSocial()  +
                                     "\n Funcionario: " + funcionario.getNomeCompleto() +
                                     "\n\n Salario Bruto: " + funcionario.getSalarioBruto() +
                                     "\n\n          Descontos: " + folhaDePagamento.getDescontos() +
                                     "\n          Beneficios: " + folhaDePagamento.getBeneficios() +
                                     "\n\n Salario Liquido: " + salarioLiquido +
-
-                                    "\n Outros beneficios: \n"+
+                                "\n\n======================================================= Outros beneficios ======================================================="+
                                     "\nVale alimentação: " + beneficio.getValorValeAlimentacao() +
                                     "\nVale Transporte: " + beneficio.getValorValeTransporte()+
-                                    "\n============================================================================================================================");
-                    break;
+                                  "\n================================================================================================================================");
+                   break;
                 case 6:
                     validador = true;
                     break;
